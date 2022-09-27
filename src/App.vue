@@ -16,6 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <!-- test -->
     <div class="wrapper">
       <HelloWorld id="11" title="xxx" msg="You did it!" />
+      <div class="status red">test</div>
       <nav>
         <RouterLink to="/"> Home </RouterLink>
         <RouterLink to="/about"> About </RouterLink>
@@ -26,10 +27,37 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.status {
+  position: relative;
+  top: 1;
+  left: 2;
+
+  width: 12px;
+  height: 12px;
+
+  color: #fff;
+
+  border: unset;
+
+  &::after {
+    position: absolute;
+    top: 1;
+
+    width: 11px;
+  }
+}
+
+.title {
+  color: #fff;
+}
+
 header {
-  line-height: 1.5;
+  width: 12px;
+  height: 12px;
   max-height: 100vh;
+
+  line-height: 1.5;
 }
 
 .logo {
@@ -39,9 +67,10 @@ header {
 
 nav {
   width: 100%;
+  margin-top: 2rem;
+
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -55,6 +84,7 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
+
   border-left: 1px solid var(--color-border);
 }
 
@@ -66,6 +96,7 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
+
     padding-right: calc(var(--section-gap) / 2);
   }
 
@@ -76,16 +107,18 @@ nav a:first-of-type {
   header .wrapper {
     display: flex;
     place-items: flex-start;
+
     flex-wrap: wrap;
   }
 
   nav {
-    text-align: left;
+    margin-top: 1rem;
     margin-left: -1rem;
-    font-size: 1rem;
 
     padding: 1rem 0;
-    margin-top: 1rem;
+
+    font-size: 1rem;
+    text-align: left;
   }
 }
 </style>
