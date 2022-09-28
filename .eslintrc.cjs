@@ -20,6 +20,9 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
+    // 使用使用:any
+    '@typescript-eslint/no-explicit-any': 'off',
+
     // 组件属性顺序
     'vue/attributes-order': 'warn',
     // 注释开头和结尾在同一行
