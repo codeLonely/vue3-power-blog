@@ -1,6 +1,6 @@
 export default {
   path: '/home',
-  name: 'Home',
+  name: 'home',
   alias: '/',
-  component: import('Src/views/Home/Home.vue'),
+  component: import('Views/home/Home.vue'),
 }

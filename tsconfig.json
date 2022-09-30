@@ -1,25 +1,61 @@
+/* 
+  用来编译typescriptd配置文件
+  https: //www.tslang.cn/docs/handbook/compiler-options.html
+*/
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue"
   ],
   "compilerOptions": {
+    // 编译的ECMAScript目标版本  "ESNext" 是指tc39最新的ES proposed features https://github.com/tc39/proposals
+    // ESNext:最新的ES语法，包括还处在stage X阶段
+    "target": "ESNext",
+    // 生成ESNExt 模块系统代码 兼容target
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    // js后缀的文件也会被typescript进行编译
+    "allowJs": false,
+    // TypeScript 不该处理JSX
+    "jsx": "preserve",
+    // 启动实验性的ES装饰器，类似于java中的装饰器
+    "experimentalDecorators": true,
+    // 生成对应的map文件
+    "sourceMap": true,
+    // 编译过程中需要引入的库文件的列表
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    // 忽略所有的声明文件（ *.d.ts）的类型检查
+    "skipLibCheck": true,
+    // 文件目录映射
     "baseUrl": ".",
-    "allowJs": true,
     "paths": {
       "Src/*": [
         "./src/*"
+      ],
+      "Views/*": [
+        "./src/views/*"
       ],
       "Server/*": [
         "./src/server/*"
       ],
       "Plugin/*": [
         "./src/plugin/*"
+      ],
+      "Config/*": [
+        "./src/config/*"
       ]
     }
   },
+  // 排除不需要编译的文件
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
+  ],
   "references": [
     {
       "path": "./tsconfig.config.json"

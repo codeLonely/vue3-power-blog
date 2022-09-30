@@ -1,4 +1,8 @@
+/* 
+  root实例
+*/
 import { createApp } from 'vue'
+
 import routerInstance from 'Server/router-instance'
 
 import App from 'Src/App.vue'
