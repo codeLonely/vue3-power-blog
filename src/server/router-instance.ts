@@ -5,7 +5,7 @@ import {
   type Router,
   type RouteRecordRaw,
   createRouter,
-  createWebHistory,
+  createWebHistory
 } from 'vue-router'
 
 import { routesLoader } from 'Plugin/routes-loader'
@@ -13,7 +13,7 @@ import { routesLoader } from 'Plugin/routes-loader'
 import {
   scrollBehavior,
   beforeEachFun,
-  afterEachFun,
+  afterEachFun
 } from 'Config/router-interceptor'
 
 const routes: Array<RouteRecordRaw> = routesLoader()
@@ -22,7 +22,7 @@ const routerInstance: Router = createRouter({
   history: createWebHistory(),
   routes,
   strict: true,
-  scrollBehavior,
+  scrollBehavior
 })
 
 routerInstance.beforeEach(beforeEachFun)

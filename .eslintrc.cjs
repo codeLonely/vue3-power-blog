@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
+    node: true
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -11,13 +11,13 @@ module.exports = {
     sourceType: 'module',
     jsxPragma: 'React',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   extends: [
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended'
   ],
   rules: {
     // 使用使用:any
@@ -26,8 +26,8 @@ module.exports = {
       'warn',
       {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-      },
+        varsIgnorePattern: '^_'
+      }
     ],
 
     // 组件属性顺序
@@ -42,8 +42,8 @@ module.exports = {
       'error',
       {
         extensions: ['js', 'jsx', '.ts', '.tsx', 'vue'], // 检测的拓展名
-        shouldMatchCase: true, // 需要匹配大小写
-      },
+        shouldMatchCase: true // 需要匹配大小写
+      }
     ],
     // 禁止空template、script、style
     'vue/no-empty-component-block': 'warn',
@@ -66,11 +66,11 @@ module.exports = {
         html: {
           void: 'always',
           normal: 'never',
-          component: 'always',
+          component: 'always'
         },
         svg: 'always',
-        math: 'always',
-      },
-    ],
-  },
+        math: 'always'
+      }
+    ]
+  }
 }

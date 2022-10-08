@@ -6,7 +6,7 @@ import NProgress from 'Server/nprogress'
 
 //  路由滚动行为
 export function scrollBehavior(to, from, savePosition) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       if (savePosition) {
         return resolve(savePosition)

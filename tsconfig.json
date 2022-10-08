@@ -1,5 +1,5 @@
 /* 
-  用来编译typescriptd配置文件
+  用来编译typescript配置文件
   https: //www.tslang.cn/docs/handbook/compiler-options.html
 */
 {
@@ -28,7 +28,7 @@
       "dom",
       "esnext"
     ],
-    // 忽略所有的声明文件（ *.d.ts）的类型检查
+    // 忽略三方包类型检查
     "skipLibCheck": true,
     // 文件目录映射
     "baseUrl": ".",
@@ -48,7 +48,11 @@
       "Config/*": [
         "./src/config/*"
       ]
-    }
+    },
+    "types": [
+      "vite/client",
+      "element-plus/global"
+    ]
   },
   // 排除不需要编译的文件
   "exclude": [
