@@ -14,6 +14,7 @@ export default defineConfig({
       Server: fileURLToPath(new URL('./src/server', import.meta.url)),
       Plugin: fileURLToPath(new URL('./src/plugin', import.meta.url)),
       Config: fileURLToPath(new URL('./src/config', import.meta.url)),
-    },
-  },
+      Sass: fileURLToPath(new URL('./src/sass', import.meta.url))
+    }
+  }
 })

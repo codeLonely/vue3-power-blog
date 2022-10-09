@@ -5,8 +5,9 @@
 {
   "include": [
     "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "types/*.d.ts",
   ],
   "compilerOptions": {
     // 编译的ECMAScript目标版本  "ESNext" 是指tc39最新的ES proposed features https://github.com/tc39/proposals
@@ -14,7 +15,7 @@
     "target": "ESNext",
     // 生成ESNExt 模块系统代码 兼容target
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     // js后缀的文件也会被typescript进行编译
     "allowJs": false,
     // TypeScript 不该处理JSX
@@ -47,12 +48,20 @@
       ],
       "Config/*": [
         "./src/config/*"
+      ],
+      "Sass/*": [
+        "./src/sass/*"
       ]
     },
     "types": [
+      "node",
       "vite/client",
       "element-plus/global"
-    ]
+    ],
+    // "typeRoots": [
+    //   "./node_modules/@types/",
+    //   "./types"
+    // ]
   },
   // 排除不需要编译的文件
   "exclude": [

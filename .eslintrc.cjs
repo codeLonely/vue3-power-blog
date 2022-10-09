@@ -20,8 +20,10 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
-    // 使用使用:any
+    // 使用:any
     '@typescript-eslint/no-explicit-any': 'off',
+    // 使用相应的运行时对象
+    '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
