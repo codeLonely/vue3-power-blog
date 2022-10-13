@@ -3,10 +3,11 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
+  plugins: [vue(), vueJsx(), svgLoader()],
   resolve: {
     alias: {
       Src: fileURLToPath(new URL('./src', import.meta.url)),
@@ -14,7 +15,8 @@ export default defineConfig({
       Server: fileURLToPath(new URL('./src/server', import.meta.url)),
       Plugin: fileURLToPath(new URL('./src/plugin', import.meta.url)),
       Config: fileURLToPath(new URL('./src/config', import.meta.url)),
-      Sass: fileURLToPath(new URL('./src/sass', import.meta.url))
+      Sass: fileURLToPath(new URL('./src/sass', import.meta.url)),
+      Assets: fileURLToPath(new URL('./src/assets', import.meta.url))
     }
   }
 })

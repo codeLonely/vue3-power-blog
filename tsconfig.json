@@ -8,6 +8,7 @@
     "src/**/*.vue",
     "src/**/*.ts",
     "types/*.d.ts",
+    "vite.config.ts"
   ],
   "compilerOptions": {
     // 编译的ECMAScript目标版本  "ESNext" 是指tc39最新的ES proposed features https://github.com/tc39/proposals
@@ -51,17 +52,20 @@
       ],
       "Sass/*": [
         "./src/sass/*"
-      ]
+      ],
+      "Assets/*": [
+        "./src/assets/*"
+      ],
     },
     "types": [
       "node",
       "vite/client",
       "element-plus/global"
     ],
-    // "typeRoots": [
-    //   "./node_modules/@types/",
-    //   "./types"
-    // ]
+    "typeRoots": [
+      "./node_modules/@types/",
+      "./types"
+    ]
   },
   // 排除不需要编译的文件
   "exclude": [
